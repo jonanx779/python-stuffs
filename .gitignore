@@ -1,0 +1,4 @@
+#Ignore all these files & dirs
+
+.DS_Store
+./python-stuffs
