@@ -1,0 +1,2 @@
+El contenido del archivo es: This is a string y esto un número 200 
+Más texto.
