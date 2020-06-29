@@ -5,7 +5,7 @@
 
 import random
 
-def main():
+def BinarySearch():
 
 	steps_number: int = random.randint(1, 4)
 	stop_number: int = random.randint(4, 100)
@@ -19,34 +19,25 @@ def main():
 
 	target: int = random.randint(1, len(numbers))
 
-	print(f"numbers: {numbers}, \nmin_index: {min_index}, \nmax_index: {max_index}, \ntarget: {target}\n")
-
 	while found_it is False:
 
 		if max_index < min_index:
-			print(f"The number is not in the list!\n")
 			break
 
 		guess = int((min_index + max_index) / 2)
 
 		if numbers[guess] == target:
-			print(f"We get the prom based on: guess = int((min_index + max_index) / 2). We found the number: {target} in index {guess}, numbers[guess] is {numbers[guess]}\n")
 			found_it = True
+			return f"target is {target}, found after {movements} movements in index {guess}. List is {numbers}."
 
 		elif numbers[guess] < target:
-			print(f"guess is {guess}. We move the min_index = guess + 1. So min_index becomes {guess + 1} and max_index still: {max_index}\n")
 			min_index = guess + 1
 
 		else:
-			print(f"guess is {guess}. We move the max_index = guess -1. So max_index becomes {guess - 1}, and min_index still: {min_index}\n")
 			max_index = guess - 1
 
 		movements+=1
-		print(f"movement number: {movements}\n")
 
-	print(f"movements: {movements}, min_value: {min_index}, max_index: {max_index}, target: {target}\n")
+	return f"target {target} was not found, result is {-1}. List is {numbers}."
 
-if __name__ == "__main__": main()
-
-
-
+if __name__ == "__main__": BinarySearch()
