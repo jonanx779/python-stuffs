@@ -19,10 +19,7 @@ def BinarySearch():
 
 	target: int = random.randint(1, len(numbers))
 
-	while found_it is False:
-
-		if max_index < min_index:
-			break
+	while max_index >= min_index:
 
 		guess = int((min_index + max_index) / 2)
 
